@@ -1,9 +1,9 @@
-name: Your Name
-studentNumber: z1234567
-officialEmail: noIdea@unsw.edu.au
+name: Kyle Chen
+studentNumber: kchen2022
+officialEmail: kylecn94@gmail.com
 contactEmail: # don't write on this line
-  firstBit: firstName.Lastname # this avoids spam, the @ is implied
-  otherBit: whereIwork.com
+  firstBit: kyle.chen # this avoids spam, the @ is implied
+  otherBit: gmail.com
 # accounts
-stackOverflowLink: https://stackoverflow.com/users/1835727/ben
-github: notionparallax
+stackOverflowLink: https://stackoverflow.com/users/1835727/kchen
+github: Kyle-Chen
