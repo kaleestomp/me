@@ -2,12 +2,20 @@
 """Modify each function until the tests pass."""
 
 
+from email.errors import StartBoundaryNotFoundDefect
+from tracemalloc import start
+from turtle import numinput
+
+
 def is_odd(a_number):
     """Return True if a_number is odd, and False if a_number is even.
 
     Look into modulo division using the '%' operator as one way of doing this.
     """
-    return None
+    result = True
+    if (a_number%2 == 0):
+        result = False
+    return result
 
 
 def fix_it(moves=True, should_move=True):
@@ -25,7 +33,12 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements. 
     As an extra challenge, see if you can get that down to three.
     """
-    return None
+    answer = "No Problem"
+    if (moves and should_move == False):
+        answer = "Duct Tape"
+    elif (moves == False and should_move):
+        answer = "WD-40"
+    return answer
 
 
 def loops_1a():
@@ -35,7 +48,10 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    return None
+    starList = []
+    for i in range(10):
+        starList.append("*")
+    return starList
 
 
 def loops_1c(number_of_items=5, symbol="#"):
@@ -45,7 +61,10 @@ def loops_1c(number_of_items=5, symbol="#"):
     string with exacly one symbol in it.
     E.g.: ['#', '#', '#', '#', '#']
     """
-    return None
+    itemList = []
+    for i in range(number_of_items):
+        itemList.append("#")
+    return itemList
 
 
 def loops_2():
@@ -66,7 +85,14 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+    starTree = []
+    for i in range(10):
+        starBranch = []
+        for j in range(10):
+            starBranch.append("*")
+        starTree.append(starBranch)
+
+    return starTree
 
 
 def loops_3():
@@ -90,7 +116,13 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
+    numTree = []
+    for i in range(10):
+        numBranch = []
+        for j in range(10):
+            numBranch.append(str(i))
+        numTree.append(numBranch)     
+    return numTree
 
 
 def loops_4():
@@ -110,7 +142,13 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+    numTree = []
+    for i in range(10):
+        numBranch = []
+        for j in range(10):
+            numBranch.append(str(j))
+        numTree.append(numBranch)    
+    return numTree
 
 
 def loops_5():
@@ -137,7 +175,13 @@ def loops_5():
         "There are {} green bottles".format(8)
     you'll come to see the pros and cons of each over time.
     """
-    return None
+    coordinateTree = []
+    for i in range(10):
+        branch1 = []
+        for j in range(10):
+            branch1.append(f"(i{i}, j{j})")
+        coordinateTree.append(branch1)
+    return coordinateTree
 
 
 def loops_6():
@@ -160,7 +204,13 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+    wedgeTree = []
+    for i in range(10):
+        row = []
+        for j in range(i):
+            row.append(str(j))
+        wedgeTree.append(row)
+    return wedgeTree
 
 
 def loops_7():
@@ -184,7 +234,19 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    pyramidTree = []
+    h = 5
+    for i in range(h):
+        Row = []
+        spaceLength = h - (i + 1)
+        starLength = i * 2 + 1
+        for j in range (spaceLength):
+            Row.append(" ")
+
+        for k in range (starLength):
+            Row.append("*")
+        pyramidTree.append(Row)
+    return pyramidTree
 
 
 def little_printer(some_kind_of_list, exercise_name):
