@@ -62,8 +62,8 @@ def loops_1c(number_of_items = 5, symbol = "#" ):
     E.g.: ['#', '#', '#', '#', '#']
     """
     itemList = []
-    for i in range(5):
-        itemList.append("#")
+    for i in range(number_of_items):
+        itemList.append(symbol)
     return itemList
 
 
@@ -249,7 +249,7 @@ def loops_7():
 
         for j in range (spaceLength):
             Row.append(" ")
-            
+
     return pyramidTree
 
 
