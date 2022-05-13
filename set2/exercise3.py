@@ -54,7 +54,7 @@ def loops_1a():
     return starList
 
 
-def loops_1c(number_of_items=5, symbol="#"):
+def loops_1c(number_of_items = 5, symbol = "#" ):
     """Respond to variables.
 
     Using any method, return a list of number_of_items items, each one a
@@ -62,7 +62,7 @@ def loops_1c(number_of_items=5, symbol="#"):
     E.g.: ['#', '#', '#', '#', '#']
     """
     itemList = []
-    for i in range(number_of_items):
+    for i in range(5):
         itemList.append("#")
     return itemList
 
@@ -178,7 +178,7 @@ def loops_5():
     coordinateTree = []
     for i in range(10):
         branch1 = []
-        for j in range(10):
+        for j in range(5):
             branch1.append(f"(i{i}, j{j})")
         coordinateTree.append(branch1)
     return coordinateTree
@@ -207,7 +207,7 @@ def loops_6():
     wedgeTree = []
     for i in range(10):
         row = []
-        for j in range(i):
+        for j in range(i + 1):
             row.append(str(j))
         wedgeTree.append(row)
     return wedgeTree
@@ -246,6 +246,10 @@ def loops_7():
         for k in range (starLength):
             Row.append("*")
         pyramidTree.append(Row)
+
+        for j in range (spaceLength):
+            Row.append(" ")
+            
     return pyramidTree
 
 
