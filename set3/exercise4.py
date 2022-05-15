@@ -32,8 +32,8 @@ def binary_search(low, high, actual_number):
     print("Nice, so a number between {0} and {1} ?".format(low, high))
 
     while True:
-        random.seed(tries)
-        guess = random.randint(low, high)
+        numList = listGenerator(low, high)
+        guess = numList[int(len(numList)/2)]
         print("I guessed {},".format(guess),)
         if guess > actual_number:
             high = guess - 1
@@ -51,6 +51,12 @@ def binary_search(low, high, actual_number):
 
     return {"guess": guess, "tries": tries}
 
+def listGenerator(start, end):
+    numList = []
+    length = end - start + 1
+    for i in range(length):
+        numList.append(start + i)
+    return numList
 
 if __name__ == "__main__":
     print(binary_search(1, 100, 5))
