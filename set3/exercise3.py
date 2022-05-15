@@ -44,8 +44,14 @@ def advancedGuessingGame():
     while not guessed:
         guessedNumber = numberChecker(input("Guess a number: "))
         print("You guessed {},".format(guessedNumber),)
-        while(guessedNumber > upperBound or guessedNumber < lowerBound):
-          guessedNumber = numberChecker(input("your number if out of bound. Try another number: "))
+        outofBoundCount = 0
+        while (guessedNumber > upperBound or guessedNumber < lowerBound):
+          if (outofBoundCount <= 1):
+            guessedNumber = numberChecker(input("your number if out of bound. Don't do this again: "))
+            outofBoundCount += 1
+          else:
+           print("This isn't working... try again next time")
+           quit()
 
         if guessedNumber == actualNumber:
             print("You got it!! It was {}".format(actualNumber))
@@ -100,7 +106,6 @@ def domainRangeNotValid(low, high):
   
   return False
 
-def numberNotinRange(low, high, number):
   while(number > high or number < low):
     print("your number if out of bound. Try anthoer one")
     return True
