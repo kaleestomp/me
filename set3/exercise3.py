@@ -100,10 +100,14 @@ def domainRangeNotValid(low, high):
         quit()
     return True
 
-  while high - low <= 5:
-    print("you are making it way too easy...give yourself a challeng")
-    return True
-  
+  while high - low <= 10:
+    if high - low <= 1:
+      print("this can't work dumb dumb")
+      return True
+    else:
+      print("you are making it way too easy...give yourself a challeng")
+      return True
+    
   return False
 
   while(number > high or number < low):
