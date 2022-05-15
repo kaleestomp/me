@@ -3,6 +3,7 @@
 
 
 import math
+import random
 
 # import time
 
@@ -24,8 +25,27 @@ def binary_search(low, high, actual_number):
     Use the VS Code debugging tools a lot here. It'll make understanding 
     things much easier.
     """
-    tries = 0
+    tries = 1
     guess = 0
+
+    print("\nWelcome to the guessing game! This time I will play it")    
+    print("Nice, so a number between {0} and {1} ?".format(low, high))
+
+    while True:
+        random.seed(tries)
+        guess = random.randint(low, high)
+        print("I guessed {},".format(guess),)
+        if guess > actual_number:
+            high = guess - 1
+            tries += 1
+            print(f"oops. I'm wrong. It's too high. I will try for the {tries} times")
+        elif guess < actual_number:
+            low = guess + 1
+            tries += 1
+            print(f"opps. I'm wrong. It's too low. I will try for the {tries} times")
+        else:
+            print(f"AHA I got it! It's {guess}. Took me {tries} tries.")
+            break
 
     # Write your code in here
 

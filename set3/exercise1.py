@@ -5,6 +5,10 @@ Modify each function until the tests pass.
 """
 
 
+from asyncio.windows_events import NULL
+from types import NoneType
+
+
 def loop_ranger(start, stop=None, step=1):
     """Return a list of numbers between start and stop in steps of step.
 
@@ -12,7 +16,12 @@ def loop_ranger(start, stop=None, step=1):
     The look up the docs for range(), you can answer this with just the range 
     function, but we'd like you to do it the long way, probably using a loop.
     """
-    return None
+    numList = []
+    num1 = start
+    while num1 < stop:
+        numList.append(num1)
+        num1 += step
+    return numList
 
 
 def lone_ranger(start, stop, step):
@@ -20,7 +29,12 @@ def lone_ranger(start, stop, step):
 
     Look up the docs for range() and wrap it in a 1:1 way
     """
-    return None
+    rangeList = []
+    num1 = start
+    while num1 < stop:
+        rangeList.append(num1)
+        num1 += step
+    return rangeList
 
 
 def two_step_ranger(start, stop):
@@ -29,7 +43,12 @@ def two_step_ranger(start, stop):
     Sometimes you want to hide complexity.
     Make a range function that always has a step size of 2
     """
-    return None
+    rangeList = []
+    num1 = start
+    while num1 < stop:
+        rangeList.append(num1)
+        num1 += 2 
+    return rangeList
 
 
 def stubborn_asker(low, high):
@@ -40,7 +59,10 @@ def stubborn_asker(low, high):
 
     Look up the docs for input
     """
-    return None
+    inputNum = NULL
+    while inputNum > high or inputNum < low or inputNum == NULL:
+        inputNum = float(input(f"please insert a number between {high} and {low}: "))
+    return inputNum
 
 
 def not_number_rejector(message):
@@ -50,8 +72,12 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
-
+    while True:
+        try:
+            inputNum = float(message)
+            return inputNum
+        except:
+            message = input("give a proper number please: ")
 
 def super_asker(low, high):
     """Robust asking function.
@@ -61,7 +87,15 @@ def super_asker(low, high):
     Try to call at least one of the other functions to minimise the
     amount of code.
     """
-    return None
+    inputNum = NULL
+    while inputNum > high or inputNum < low or inputNum == NULL:
+        inputNum = not_number_rejector(input(f"please insert a number between {high} and {low}: "))
+        if inputNum > high and inputNum != NULL:
+            print ("your number is too high")
+        elif inputNum < low and inputNum != NULL:
+            print ("your number is too low")
+    return inputNum
+
 
 
 if __name__ == "__main__":
