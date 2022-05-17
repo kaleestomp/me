@@ -58,7 +58,7 @@ def findMidNum(start, end):
     # difference between high and low + low
     difference = end - start
     midNum = (difference / 2) + start
-    midNum = math.floor(midNum)
+    midNum = math.ceil(midNum)
     return midNum
 
 
