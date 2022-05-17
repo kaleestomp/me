@@ -37,21 +37,24 @@ def binary_search(low, high, actual_number):
         print("I guessed {},".format(guess),)
         if guess > actual_number:
             high = guess - 1
-            tries += 1
             print(f"oops. I'm wrong. It's too high. I will try for the {tries} times")
         elif guess < actual_number:
             low = guess + 1
-            tries += 1
             print(f"opps. I'm wrong. It's too low. I will try for the {tries} times")
-        else:
+        elif guess == actual_number:
             print(f"AHA I got it! It's {guess}. Took me {tries} tries.")
-            break
+            return {"guess": guess, "tries": tries}
+        else:
+            print(f"wtf idk what's hapenning")
+            raise #you can raise errors; you can catch an error - do something else and re-excute;
+            #'except' catch error
 
+        tries += 1
     # Write your code in here
 
-    return {"guess": guess, "tries": tries}
 
 def listGenerator(start, end):
+    # difference between high and low + low
     numList = []
     length = end - start + 1
     for i in range(length):

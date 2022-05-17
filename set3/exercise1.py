@@ -13,7 +13,7 @@ def loop_ranger(start, stop=None, step=1):
     """Return a list of numbers between start and stop in steps of step.
 
     Do this using any method apart from JUST using range() #TODO: clarify this wording
-    The look up the docs for range(), you can answer this with just the range 
+    The look up the docs for range(), you can answer this with just the range
     function, but we'd like you to do it the long way, probably using a loop.
     """
     numList = []
@@ -47,7 +47,7 @@ def two_step_ranger(start, stop):
     num1 = start
     while num1 < stop:
         rangeList.append(num1)
-        num1 += 2 
+        num1 += 2
     return rangeList
 
 
@@ -68,16 +68,18 @@ def stubborn_asker(low, high):
 def not_number_rejector(message):
     """Ask for a number repeatedly until actually given one.
 
-    Ask for a number, and if the response is actually NOT a number 
+    Ask for a number, and if the response is actually NOT a number
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
     while True:
         try:
-            inputNum = float(message)
+            n = input(message)
+            inputNum = float(n)
             return inputNum
         except:
-            message = input("give a proper number please: ")
+            print("give a proper number please: ")
+
 
 def super_asker(low, high):
     """Robust asking function.
@@ -89,13 +91,14 @@ def super_asker(low, high):
     """
     inputNum = NULL
     while inputNum > high or inputNum < low or inputNum == NULL:
-        inputNum = not_number_rejector(input(f"please insert a number between {high} and {low}: "))
+        inputNum = not_number_rejector(
+            f"please insert a number between {high} and {low}: "
+        )
         if inputNum > high and inputNum != NULL:
-            print ("your number is too high")
+            print("your number is too high")
         elif inputNum < low and inputNum != NULL:
-            print ("your number is too low")
+            print("your number is too low")
     return inputNum
-
 
 
 if __name__ == "__main__":
