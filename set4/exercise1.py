@@ -92,9 +92,9 @@ def wordy_pyramid():
         if wordData.status_code is 200:
             word = wordData.text
             wordPyramidList.append(f"{word}")
-            # print(f"{word}")
+            print(f"{word}")
 
-    for i in range(18, 2, -2):
+    for i in range(17, 2, -2):
         url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={wordLength}".format(
             wordLength=i
         )
@@ -102,7 +102,7 @@ def wordy_pyramid():
         if wordData.status_code is 200:
             word = wordData.text
             wordPyramidList.append(f"{word}")
-            # print(f"{word}")
+            print(f"{word}")
 
     return wordPyramidList
 
