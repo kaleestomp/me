@@ -40,7 +40,6 @@ def get_some_details():
     postcode = data["results"][0]["location"]["postcode"]
     id = data["results"][0]["id"]["value"]
     postcodePlusID = f"{int(postcode) + int(id)}"
-    json_data.close()
     return {
         "lastName": lastName,
         "password": password,
@@ -91,7 +90,7 @@ def wordy_pyramid():
         if wordData.status_code is 200:
             word = wordData.text
             wordPyramidList.append(f"{word}")
-            print(f"{word}")
+            # print(f"{word}")
 
     for i in range(17, 2, -2):
         url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={wordLength}".format(
@@ -101,7 +100,7 @@ def wordy_pyramid():
         if wordData.status_code is 200:
             word = wordData.text
             wordPyramidList.append(f"{word}")
-            print(f"{word}")
+            # print(f"{word}")
 
     return wordPyramidList
 
@@ -198,7 +197,7 @@ def diarist():
             stopCount += 1
     gCodeFile.close()
     stopCountFile = open("set4/lasers.pew", "w")
-    stopCountFile.write(f"The gcode stoped {stopCount} times")
+    stopCountFile.write(f"{stopCount}")
     stopCountFile.close()
 
 
