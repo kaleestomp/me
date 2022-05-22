@@ -33,13 +33,15 @@ def get_some_details():
          dictionary, you'll need integer indeces for lists, and named keys for
          dictionaries.
     """
-    json_data = open(LOCAL + "/lazyduck.json").read()
+    jsonFile = open(LOCAL + "/lazyduck.json", "r")
+    json_data = jsonFile.read()
     data = json.loads(json_data)
     lastName = data["results"][0]["name"]["last"]
     password = data["results"][0]["login"]["password"]
     postcode = data["results"][0]["location"]["postcode"]
     id = data["results"][0]["id"]["value"]
     postcodePlusID = f"{int(postcode) + int(id)}"
+    jsonFile.close()
     return {
         "lastName": lastName,
         "password": password,
@@ -82,7 +84,7 @@ def wordy_pyramid():
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
     wordPyramidList = []
-    for i in range(3, 21, 2):
+    for i in range(3, 20, 2):
         url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={wordLength}".format(
             wordLength=i
         )
@@ -92,7 +94,7 @@ def wordy_pyramid():
             wordPyramidList.append(f"{word}")
             # print(f"{word}")
 
-    for i in range(17, 2, -2):
+    for i in range(18, 2, -2):
         url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={wordLength}".format(
             wordLength=i
         )

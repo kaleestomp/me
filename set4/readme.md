@@ -10,6 +10,8 @@ after .open(), what if I want to keep .read()/readline()/readlines(). (after the
 
 def get_some_details() - this function didn't .close()?
 
+I think there's an error with word pyramid (longest word not 20)
+
 def smallPokedex(low=1, high=5):
 """Return the name, height and weight of the tallest pokemon in the range low to high.
 
