@@ -94,7 +94,7 @@ def wordy_pyramid():
             wordPyramidList.append(f"{word}")
             # print(f"{word}")
 
-    for i in range(18, 2, -2):
+    for i in range(18, 3, -2):
         url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={wordLength}".format(
             wordLength=i
         )
