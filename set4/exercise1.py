@@ -84,7 +84,7 @@ def wordy_pyramid():
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
     wordPyramidList = []
-    for i in range(3, 20, 2):
+    for i in range(3, 21, 2):
         url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={wordLength}".format(
             wordLength=i
         )
@@ -94,7 +94,7 @@ def wordy_pyramid():
             wordPyramidList.append(f"{word}")
             # print(f"{word}")
 
-    for i in range(18, 3, -2):
+    for i in range(18, 2, -2):
         url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={wordLength}".format(
             wordLength=i
         )
