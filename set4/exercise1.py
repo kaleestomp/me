@@ -40,7 +40,7 @@ def get_some_details():
     password = data["results"][0]["login"]["password"]
     postcode = data["results"][0]["location"]["postcode"]
     id = data["results"][0]["id"]["value"]
-    postcodePlusID = f"{int(postcode) + int(id)}"
+    postcodePlusID = postcode + int(id)
     jsonFile.close()
     return {
         "lastName": lastName,
