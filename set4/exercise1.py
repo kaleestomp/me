@@ -83,27 +83,19 @@ def wordy_pyramid():
     ]
     TIP: to add an argument to a URL, use: ?argName=argVal e.g. &wordlength=
     """
+    wordPyramidList = word_wedge(3, 20, 2) + word_wedge(20, 2, -2)
+    return wordPyramidList
+
+
+def word_wedge(start, stop, step):
     wordPyramidList = []
-    for i in range(3, 21, 2):
-        url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={wordLength}".format(
-            wordLength=i
-        )
+    for i in range(start, stop, step):
+        url = f"https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={i}"
         wordData = requests.get(url)
         if wordData.status_code is 200:
             word = wordData.text
-            wordPyramidList.append(f"{word}")
-            print(f"{word}")
-
-    for i in range(17, 2, -2):
-        url = "https://us-central1-waldenpondpress.cloudfunctions.net/give_me_a_word?wordlength={wordLength}".format(
-            wordLength=i
-        )
-        wordData = requests.get(url)
-        if wordData.status_code is 200:
-            word = wordData.text
-            wordPyramidList.append(f"{word}")
-            print(f"{word}")
-
+            wordPyramidList.append(word)
+            print(word)
     return wordPyramidList
 
 
